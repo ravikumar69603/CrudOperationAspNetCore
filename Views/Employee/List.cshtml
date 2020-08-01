@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Lib.Core.Domain.EmployeeDetail>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emplyoee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emailid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departmet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastupdateOn)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emplyoee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emailid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departmet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastupdateOn)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
