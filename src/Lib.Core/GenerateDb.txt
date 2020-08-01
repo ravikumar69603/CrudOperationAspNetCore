@@ -1,0 +1,2 @@
+﻿
+Scaffold-DbContext "Server=LOCALHOST;Database=employeedb;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domain -f
